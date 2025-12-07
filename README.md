@@ -2,14 +2,14 @@
 
 **NioKvStore** is a lightweight, distributed, in-memory key-value database built from scratch in Java. Inspired by Redis, it uses **Non-blocking I/O (Java NIO)** to handle high concurrency on a single thread.
 
-It features **Master-Slave Replication** for scalability, **AOF Persistence** for durability, and achieves **~100,000 Requests Per Second (RPS)** on standard hardware.
+It features **Master-Slave Replication** for scalability, **AOF Persistence** for durability, and achieves **over 100,000 Requests Per Second (RPS)** on standard hardware.
 
 ---
 
-## Key Features
+## 🚀 Key Features
 
 * **Non-Blocking I/O Architecture:** Uses `java.nio.channels.Selector` (Reactor Pattern) to manage thousands of concurrent connections efficiently without the overhead of thread-per-client models.
-* **High Performance:** Benchmarked at **99,581 RPS** (Requests Per Second) using buffered I/O batching and pipelined network reads.
+* **High Performance:** Benchmarked at **101,399 RPS** (Requests Per Second) using buffered I/O batching and pipelined network reads.
 * **Distributed Replication:** Supports **Master-Slave** architecture. Writes to the Master are asynchronously propagated to Slaves for read scaling and redundancy.
 * **Persistence (AOF):** Implements **Append-Only File** logging with configurable fsync strategies to ensure data durability across restarts.
 * **TTL & Expiration:** Supports temporary keys via `EXPIRE` command. Uses a hybrid **Lazy Expiration** (on access) and **Active Expiration** (probabilistic background sampling) strategy to manage memory.
@@ -17,9 +17,7 @@ It features **Master-Slave Replication** for scalability, **AOF Persistence** fo
 
 ---
 
-## Architecture
-
-
+## 🛠️ Architecture
 
 The server runs on a **Single-Threaded Event Loop**:
 1.  **Selector:** Monitors socket channels for `OP_ACCEPT` (new connections) and `OP_READ` (incoming data).
@@ -29,7 +27,7 @@ The server runs on a **Single-Threaded Event Loop**:
 
 ---
 
-## Performance Benchmarks
+## ⚡ Performance Benchmarks
 
 **Environment:** Fedora Linux, Ryzen 7 5700U, OpenJDK 21.
 
@@ -37,14 +35,14 @@ The server runs on a **Single-Threaded Event Loop**:
 | :--- | :--- |
 | **Concurrency** | 50 Threads |
 | **Total Requests** | 500,000 |
-| **Time Taken** | 5.02 seconds |
-| **Throughput** | **99,581.76 req/sec** |
+| **Time Taken** | 4.93 seconds |
+| **Throughput** | **101,399.31 req/sec** |
 
 *Optimized using buffered output streams and batching system calls to reduce kernel context switching.*
 
 ---
 
-## Getting Started
+## 💻 Getting Started
 
 ### Prerequisites
 * Java Development Kit (JDK) 17 or higher.
