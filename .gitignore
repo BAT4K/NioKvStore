@@ -1,0 +1,15 @@
+# Ignore IntelliJ project files
+.idea/
+*.iml
+*.iws
+
+# Ignore compiled Java classes
+out/
+target/
+*.class
+*.log
+
+# Ignore data files and OS junk
+magma.aof
+.DS_Store
+EOF
