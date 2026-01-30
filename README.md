@@ -62,7 +62,7 @@ The server operates on a **single-threaded event loop**:
 
 ## Performance Benchmarks
 
-**Environment:** Fedora Linux, Ryzen 7 5700U, OpenJDK 21
+**Environment:** Fedora Linux, Ryzen 5 7530U, OpenJDK 21
 
 | Metric             | Result              |
 |--------------------|---------------------|
